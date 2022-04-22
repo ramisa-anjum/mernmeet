@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+   <main class="container-fluid d-flex flex-column home">
+       <div class="v-top text-align">
+           <div class="top-remote-video d-flex">
+               <div class="call">
+                   <div class="video">
+                       <div id="myself" class="mybox disply-center flex-colum">
+                           <h1 class="display-center"></h1>
+                               <div class="didplay-center">
+                                    <video autoplay muted id="localvideo"></video>
+                               </div>
+                           
+                       </div>
+                        <div id="otherself" class="userbox disply-center flex-colum" style="display: none;">
+                            <h1 class="display-center"></h1>
+                            <video autoplay muted></video>
+                            <audio autoplay controls muted style="display: none;"></audio>
+                        </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="v-top-right bg-light text-secondary w-10 d-flex align-item-center">
+        <div class="participant action-icon display-center cursor-pointer" id="participant">
+             <i class="fas fa-users"></i>
+        </div>
+        <div class="msg action-icon display-center cursor-pointer" id="msg">
+            <i class="fas fa-comment-alt"></i>
+       </div>
+    </div>
+    <div class="v-bottom bg-light d-flex justify-content-between align-item-center">
+        <div class="bottom-left cursor-pointer meeting-details">
+            Meeting Details <i class="fas fa-angle-up"></i>
+        </div>
+        <div class="bottom-middle d-flex">
+            <div class="mic-onoff action-icon display-center cursor-pointer" id="micOnOff">
+             <i class="fas fa-microphone-slash"></i>
+            </div>
+            <div class="call-onoff action-icon display-center cursor-pointer" id="callOnOff">
+             <i class="fas fa-phone"></i>
+            </div>
+            <div class="video-onoff action-icon display-center cursor-pointer" id="videoOnOff">
+             <i class="fas fa-video-slash"></i>
+            </div>
+        </div>
+        <div class="bottom-right d-flex justify-content-between align-item-center">
+            <div class="share action-icon display-center cursor-pointer" id="shareOnOff">
+                 <i class="fas fa-share-square"></i>
+            </div>
+            <div class="more action-icon display-center cursor-pointer" id="more">
+                 <i class="fas fa-ellipsis-v"></i>
+             </div>
+        </div>
+    </div>
+   </main>
+
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-1.12.4.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js" integrity="sha512-nYuHvSAhY5lFZ4ixSViOwsEKFvlxHMU2NHts1ILuJgOS6ptUmAGt/0i5czIgMOahKZ6JN84YFDA+mCdky7dD8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script src="js/script.js"></script>
+
+   <script>
+       let urlid = new URLSearchParams(window.location.search)
+       let meetingid = urlid.get("meetingid")
+       let username = window.prompt("Enter your user name")
+       console.log(meetingid)
+    
+  
+       if(!username || !meetingid){
+           alert("user name or user id is missing")
+       }
+
+       myvideoapp.init(username,meetingid)
+   </script>
+</body>
+</html>

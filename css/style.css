@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home{
+    background: black;
+    height: 93vh;
+}
+.v-bottom{
+    padding: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+.v-bottom i{
+    margin: 0 15px;
+}
+
+.v-top-right{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.v-top-right i{
+    margin: 30px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.call-onoff{
+    color: red;
+    
+}
+/* .call-onoff :hover{
+    background-color: rgba(0, 0, 0, 0.336);
+    padding: 8px;
+    border-radius: 5px;
+}
+.mic-onoff :hover{
+    background-color: rgba(0, 0, 0, 0.336);
+    padding: 8px;
+    border-radius: 5px;
+}
+.video-onoff :hover{
+    background-color: rgba(0, 0, 0, 0.336);
+    padding: 8px;
+    border-radius: 5px;
+} */
+.text-color{
+    color: white;
+}
